@@ -1,7 +1,7 @@
 import React from 'react'
 import todo from '../models/todo';
 import Todo from './TodoItem';
-import classes from "./Todos.module.css"
+import classes from "./css/Todos.module.css"
 
 const Todos: React.FC <{items: todo[]}>= (props) => {
     return (

@@ -1,5 +1,5 @@
 import React, { useRef } from 'react'
-import classes from "./NewTodo.module.css"
+import classes from "./css/NewTodo.module.css"
 
 const NewTodo: React.FC <{onAddTodo: (text : string) => void}> = (props)=> {
     const todoTextInputRef = useRef<HTMLInputElement>(null)

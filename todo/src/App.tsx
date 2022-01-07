@@ -4,6 +4,8 @@ import './App.css';
 import Todos from './component/Todos';
 import Todo from './models/todo';
 import NewTodo from './component/NewTodo';
+// import {BrowserRouter as Router, Routes, Route} from "react-router-dom"
+// import Login from "./Routes/Login"
 
 function App() {
  const [todos, setTodo] = useState <Todo[]> ([]); 
@@ -14,10 +16,15 @@ function App() {
     })
  }
   return (
+    //<Router>
     <div className="App">
-       <NewTodo onAddTodo= {addTodo}/>
-       <Todos items= {todos} />
+       {/* <Routes> */}
+         {/* <Route exact path = "/" element = {<Login/>}/> */}
+        <NewTodo onAddTodo= {addTodo}/>
+        <Todos items= {todos} />
+      {/* </Routes> */}
     </div>
+    //</Router>
   );
 }
 
