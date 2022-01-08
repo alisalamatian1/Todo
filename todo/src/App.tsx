@@ -16,13 +16,19 @@ function App() {
     })
  }
 
+ const removeTodo = (key: number) => {
+  setTodo ((prevTodo)=>{
+    return prevTodo.filter(todo => todo.key !== key)
+  })}
+
+
   return (
     //<Router>
     <div className="App">
        {/* <Routes> */}
          {/* <Route exact path = "/" element = {<Login/>}/> */}
         <NewTodo onAddTodo= {addTodo}/>
-        <Todos items= {todos} setTodo = {setTodo}/>
+        <Todos items= {todos} removeTodo ={removeTodo}/>
       {/* </Routes> */}
     </div>
     //</Router>

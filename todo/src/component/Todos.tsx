@@ -3,7 +3,7 @@ import todo from '../models/todo';
 import Todo from './TodoItem';
 import classes from "./css/Todos.module.css"
 
-const Todos: React.FC <{items: todo[], setTodo: Dispatch<SetStateAction<todo[]>>}> = (props:any) => {
+const Todos: React.FC <{items: todo[], removeTodo: (key: number)=> void}> = (props) => {
     
     return (
         <div>
@@ -11,7 +11,7 @@ const Todos: React.FC <{items: todo[], setTodo: Dispatch<SetStateAction<todo[]>>
             {props.items.map((item:todo) => {
 
                 return (<div> 
-                    <Todo key = {item.key} item = {item} items={props.items} setTodo={props.setTodo}/> 
+                    <Todo key = {item.key} item = {item} items={props.items} removeTodo = {props.removeTodo}/> 
                     
                     </div>
                 )
