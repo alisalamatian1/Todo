@@ -3,12 +3,18 @@ import todo from '../models/todo';
 import Todo from './TodoItem';
 import classes from "./css/Todos.module.css"
 
-const Todos: React.FC <{items: todo[]}>= (props) => {
+const Todos = (props:any) => {
+    
     return (
         <div>
             <ul className= {classes.todos}> 
-            {props.items.map(item => {
-                return <Todo key = {item.id} item = {item} /> 
+            {props.items.map((item:any) => {
+
+                return (<div> 
+                    <Todo key = {item.id} item = {item} items={props.items} setTodo={props.setTodo}/> 
+                    
+                    </div>
+                )
             })}
             </ul>
         </div>

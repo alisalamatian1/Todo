@@ -15,13 +15,14 @@ function App() {
         return currentTodo.concat(newTodo);
     })
  }
+
   return (
     //<Router>
     <div className="App">
        {/* <Routes> */}
          {/* <Route exact path = "/" element = {<Login/>}/> */}
         <NewTodo onAddTodo= {addTodo}/>
-        <Todos items= {todos} />
+        <Todos items= {todos} setTodo = {setTodo}/>
       {/* </Routes> */}
     </div>
     //</Router>
