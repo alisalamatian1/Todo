@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { Dispatch, SetStateAction } from 'react'
 import todo from '../models/todo';
 import classes from "./css/TodoItem.module.css"
 
-const Todo  = (props : any) => {
+const Todo : React.FC <{ item: todo; items: todo[], setTodo: Dispatch<SetStateAction<todo[]>>}> = (props : any) => {
      const removeHandler = ()=>{
-        props.setTodo(props.items.filter((el:any)=>{
+        props.setTodo(props.items.filter((el:todo)=>{
             
             return el.key !== props.item.key
         }))
